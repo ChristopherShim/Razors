@@ -1,5 +1,5 @@
 /node_modules/
 /public/build/
-/notes/
+notes.txt
 
 .DS_Store
