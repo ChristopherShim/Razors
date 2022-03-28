@@ -5,6 +5,7 @@
 
     onMount(()=>{
         products.subscribe(value => {
+            console.log(value)
             localProducts = value;
         });
     });
