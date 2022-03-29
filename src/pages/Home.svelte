@@ -2,7 +2,7 @@
     import Hero from '../components/Hero.svelte'
     import {link} from 'svelte-routing'
     // Featured products
-
+import Featured from '../components/Products/Featured.svelte'
     // Old way of adding class to a <Link>
     // function getProps(){
     //     return {class:'btn btn-primary btn-hero'}
@@ -25,3 +25,5 @@
     <!-- use:link makes it a bit easier for us. Since we imported {Link} from svelte.routing, we can use:link straight to whatever link our href is pointing to -->
     <!-- https://github.com/EmilTholin/svelte-routing ctrl+f for link for docs -->
 </Hero>
+
+<Featured title='Featured Product'/>
