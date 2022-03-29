@@ -8,14 +8,17 @@
 	import ProductTemplate from './pages/ProductTemplate.svelte';
 	// Router
 	import {Router, Route, Link} from 'svelte-routing';
+	// components
+	import Navbar from './components/Navbar/Navbar.svelte';
 </script>
 
 <Router>
-	<nav class='navbar'>
+	<Navbar />
+	<!-- <nav class='navbar'>
 		<Link to='/'>Home</Link>
 		<Link to='/about'>About</Link>
 		<Link to='/products'>Products</Link>
-	</nav>
+	</nav> -->
 	<Route path='/' component='{Home}' />
 	<Route path='/about' component='{About}' />
 	<Route path='/login' component='{Login}' />
