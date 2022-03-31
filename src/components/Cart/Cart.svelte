@@ -19,9 +19,11 @@
                 <span></span>
             </div>
             <!-- end of cart header -->
+
             <!-- cart items -->
             <p>cart items</p>
             <!-- end of cart items -->
+
             <!-- cart footer -->
             <div class="cart-footer">
                 {#if user}
@@ -39,6 +41,7 @@
                 {/if}
             </div>
             <!-- end of cart footer -->
+
         </div>
 
     </div>
