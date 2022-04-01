@@ -1,8 +1,11 @@
 <script>
     import Item from './Item.svelte';
-    import cart from '../../stores/cart';
+    import cart, {cartTotal} from '../../stores/cart';
     import {fly} from 'svelte/transition';
     import {flip} from 'svelte/animate';
+    // $: total = $cart.reduce((acc,curr)=>{
+    //     return (acc += (curr.amount * curr.price))
+    // },0)
 </script>
 
 
@@ -18,6 +21,6 @@
         <h2 class='empty-cart'>currently empty</h2>
         {/each}
     </article>
-
+    <h2 class='cart-total'>Total: ${$cartTotal}</h2>
 </section>
 
