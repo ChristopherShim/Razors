@@ -10,7 +10,7 @@ import globalStore from '../stores/globalStore';
     globalStore.toggleItem('sidebar', false)
 }}>logout</a>
 {:else}
-<a href='/login' on:click={()=>{
+<a href='/login' use:link on:click={()=>{
     globalStore.toggleItem('sidebar', false)
 }}>login</a>
 {/if}
