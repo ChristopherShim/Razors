@@ -24,8 +24,9 @@
             loginUser()
         }
         else{
-            registerUser()
+            user = registerUser({email,password,username})
         }
+        console.log(user)
     }
 </script>>
 
