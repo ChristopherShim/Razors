@@ -21,12 +21,18 @@
     async function handleSubmit(){
         let user;
         if(isMember){
-            loginUser()
+        user = loginUser({email,password})
         }
         else{
-            user = registerUser({email,password,username})
+        user = registerUser({email,password,username})
         }
         console.log(user)
+
+        if (user) {
+        
+        } else {
+
+        }
     }
 </script>>
 
