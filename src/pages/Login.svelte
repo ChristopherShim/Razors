@@ -21,17 +21,16 @@
     async function handleSubmit(){
         let user;
         if(isMember){
-        user = loginUser({email,password})
+        user = await loginUser({email,password})
         }
         else{
-        user = registerUser({email,password,username})
+        user = await registerUser({email,password,username})
         }
         console.log(user)
-
         if (user) {
         
         } else {
-
+            
         }
     }
 </script>>

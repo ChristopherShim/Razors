@@ -3,7 +3,6 @@ import url from "../strapi/URL";
 import getProducts from "../strapi/getProducts";
 const store = writable([], () => {
   setProducts();
-  console.log(store)
   return () => {};
 });
 
