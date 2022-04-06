@@ -21,13 +21,13 @@ async function setProducts() {
 // flatten products
 function flattenProducts(data) {
   return data.data.map(item => {
-    let image = item.image.url;
-    // let image = `${url}${item.image.url}`;
+    // let image = item.image.url;
+    let image = `${url}${item.attributes.image.data.attributes.url}`;
     return { ...item, image };
   });
 }
 // featured store
 export const featuredStore = derived(store, $featured => {
-  return $featured.filter(item => item.featured === true);
+  return $featured.filter(item => item.attributes.featured === true);
 });
 export default store;
