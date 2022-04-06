@@ -2,6 +2,7 @@
     import loginUser from '../strapi/loginUser';
     import registerUser from '../strapi/registerUser';
     import {navigate} from 'svelte-routing'
+    import globalStore from '../stores/globalStore'
     let email = '';
     let password = '';
     let username = 'default username';
@@ -32,9 +33,11 @@
 
         if (user) {
             navigate('/products');
+            globalStore.toggleItem('alert', true, 'welcome to shopping madness')
             // add alert
             return;
         }
+        globalStore.toggleItem('alert', true, 'there was an error', true)
         // add alert
     }
 </script>>
