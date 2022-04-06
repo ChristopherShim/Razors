@@ -3,6 +3,7 @@ import url from "../strapi/URL";
 import getProducts from "../strapi/getProducts";
 const store = writable([], () => {
   setProducts();
+  console.log(store)
   return () => {};
 });
 
@@ -23,7 +24,10 @@ function flattenProducts(data) {
   return data.data.map(item => {
     // let image = item.image.url;
     let image = `${url}${item.attributes.image.data.attributes.url}`;
-    return { ...item, image };
+    let title = `${item.attributes.title}`
+    let price = `${item.attributes.price}`
+    let description =`${item.attributes.description}`
+    return { ...item, image, title, price, description };
   });
 }
 // featured store
