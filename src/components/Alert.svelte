@@ -6,6 +6,17 @@
     const handleClose = () => {
         globalStore.toggleItem('alert',false)
     }
+
+    let timeout;
+onMount(()=>{
+    timeout = setTimeout(() => {
+        globalStore.toggleItem('alert', false);
+    }, 3000);
+})
+
+onDestroy(()=>{
+    clearTimeout(timeout);
+})
 </script>
 
 <div class='alert-container'
