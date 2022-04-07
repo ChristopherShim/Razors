@@ -16,12 +16,37 @@
 
     onMount(()=>{
         if(!$user.jwt){
-            navigate('/')
+            navigate('/');
+            return;
         }
+
+        stripe = Stripe('pk_test_51Km48REG5cPqpcF31qsK3C8qonRwDtfr1grkbvJDskSGaExAGSYFfu9jjJKsqDC1pxnJFALH3eIeB77XUAoR2mi800TNvzfzr5');
+        elements = stripe.elements();
+        card = elements.create('card');
+        card.mount(cardElement);
+        card.addEventListener('change', function(event){
+            if(event.error){
+                cardErrors.textContent = event.error.message;
+            }
+            else {
+                cardErrors.textContent = '';
+            }
+        })
     })
 
-    function handleSubmit(){
-        console.log('form submitted')
+    async function handleSubmit(){
+        let response = await stripe
+        .createToken(card)
+        .catch(error => console.log(error));
+        const {token} = response;
+        if(token){
+            console.log(response)
+            // token.id
+            // submit the order
+        }
+        else {
+            console.log(response)
+        }
     }
 </script>
 
