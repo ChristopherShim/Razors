@@ -19,8 +19,8 @@
             navigate('/');
             return;
         }
-
-        stripe = Stripe('pk_test_51Km48REG5cPqpcF31qsK3C8qonRwDtfr1grkbvJDskSGaExAGSYFfu9jjJKsqDC1pxnJFALH3eIeB77XUAoR2mi800TNvzfzr5');
+        if ($cartTotal>0){
+            stripe = Stripe('pk_test_51Km48REG5cPqpcF31qsK3C8qonRwDtfr1grkbvJDskSGaExAGSYFfu9jjJKsqDC1pxnJFALH3eIeB77XUAoR2mi800TNvzfzr5');
         elements = stripe.elements();
         card = elements.create('card');
         card.mount(cardElement);
@@ -31,8 +31,10 @@
             else {
                 cardErrors.textContent = '';
             }
-        })
-    })
+        });
+        }
+        
+    });
 
     async function handleSubmit(){
         let response = await stripe
